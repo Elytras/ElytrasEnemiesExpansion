@@ -14,18 +14,22 @@ They can be:
 3. Too small to realistically count as full on custom enemy
 4. Premade variant of something easy to do that was added only to free up space in difficulty file, has a high chance of also being a mev enemy with a rename to allow down recorder mod to count kills from it
 5. Just something weird
-General purpose enemies are finished, ready to be used enemies.
+For Nightmares enemies: 
+    If you want a copy of one of them being saved in the state they are at any given point, please notify me, otherwise i may change/delete enemy from the mod for any reason. I may not notify about exact changes done to Nightmares enemies in the mod updates.
+
+General purpose enemies are finished, ready to be used enemies that will not be changed unless enough people ask to change it (in which case i'll either edit it or add edited variant of said enemy).
 
 General Purpose Enemies
 
     Mactera & Menace Enemies:
         ED_Mactera_CircleJaw: Trijaw which shoots 72 projectiles in a circle.
-        ED_Spider_RapidShooter_Rocket: Rocketnace. Shoots PRJ_Spider_RapidShooter_Rocket (edited patrol bot rockets).
+        ED_Spider_RapidShooter_Rocket: Rocket menace.
         ED_Spider_RapidShooter_TCF: Menace that shoots PRJ_Spider_RapidShooter_TCF (modified EPC TCF PP) shots. Uses Donnie's fanatic/shotgunmenace AI.
         ED_TurboNuke: You won’t believe...
 
     Exploders & Bulk Variants:
         ED_Spider_Exploder_Radioactive: REZ exploder (because vanilla doesn't have ED).
+        ED_Spider_Exploder_Camo and ED_Spider_Exploder_Radioactive_Camo: Normal and radioactive camouflage variants of exploders slightly smaller in size and
         ED_Spider_Exploder_Immortal: Immortal exploder with a 10m explosion radius.
         ED_Spider_ExploderTank_Electrical: Electrical bulk, leaves an electrical field on death which slows players by 50% and disables shields.
         ED_Spider_ExploderTank_Fire: Fire bulk, 20m radius heat explosion, leaves magma after death. On hit, spawns burning ground; projectiles spawn fire ground.
@@ -55,6 +59,12 @@ General Purpose Enemies
         ED_ShootingPlant_NukeBurst: Copy of Mev's triple-shot nukeballer. Shoots PRJ_NukeBurstShot with an 8m radiation field, has better glowing weak points, and is renamed for Down Recorder mod (this was the only reason i did that tbh lol).
         ED_ShootingPlant_NukeSpread: Nukeballer variant that shoots 5 to 11 PRJ_NukeBurstShot in a 30-degree circle.
         ED_ShootingPlant_NukeBarrage: NukeBurst variant, which after each attack, increases projectile count by 1-5.
+        ED_ShootingPlant_SmolSpawner: Spitball variant that spawns smollers.
+        ED_ShootingPlant_Smoller: Smoller. has 1/4 hp of normal baller
+    Lobber Variants:
+        ED_Spider_Lobber_Fire: Fireball septic with modified og dread fireball (doesn't carve)
+        ED_Spider_Lobber_Snow: Snowball septic with modified snowball projectile (doesn't isntafreeze players)
+        ED_Spider_Lobber_Smoke: Gas septic, has different projectile variants that spawn different variation of praetorian gas. Default: PRJ_Lobber_SmokeDamage
 
     Miscellaneous Special Enemies:
         ED_BattleBlimp: Breeder that shoots PRJ_Battleblimp (modified bot rockets).
@@ -80,9 +90,11 @@ Nightmares Enemies
         ED_Greg: Giant high HP/damage/resistance Swarmer.
         ED_GregJunior: Greg, but junior.
         ED_Gabriel: Low, wide, high-speed, high-HP oppressor.
+        ED_Gregomber: Spawner goober which spawns Greg.Jr
         ED_George: Very high HP, high delay between shots, Circlejaw.
         ED_Roadblock: Giant, transparent, immortal, stationary, pettable lootbug.
         ED_Speedbump: Small, transparent, immortal, fast, pettable lootbug.
+        ED_Bomber_Exploder_Meme: No memes.
 
     Breeders & Spawners:
         ED_Sharknado: Shark breeder.
@@ -104,17 +116,18 @@ Nightmares Enemies
         ED_Spider_ExploderTank_Elemental_E: Elemental bulk variant with preset Nightmares values.
         ED_Spider_ExploderTank_Invis: Invisible minibulk, no clusters on death, 4m explosion radius, replaces terrain with Dystrum.
         ED_Spider_Bulkonator: Very low HP Detonator that spawns 12-23 invisible bulks after death.
-        ED_Spider_Exploder_Immortal_E: Immortal Exploder with 
-        ED_Spider_Exploder_Camo and ED_Spider_Exploder_Radioactive_Camo: Normal and radioactive camouflage variants of exploders slightly smaller in size and with a way higher speed. (not yet a normal version due to implementation difficulty (help))
         ED_Spider_Exploder_Immortal_E: Immortal exploder with nightmares preset
 
     Nexus Variants:
-        ED_Nexus_Invis: Nexus variant that spawns invisible bulks.
+        ED_Nexus_Bulk: Nexus variant that spawns dystrm bulks.
         ED_Nexus_Telegrabber: Nexus variant that spawns Telegrabbers.
         ED_Nexus_FireIce: Nexus variant that spawns Fire/Ice Septics.
 
     Warden Variants:
-            ED_Warden_Stalker: Warden variant that spawns stalkers and makes every buffed enemy have stalker material.        
+        ED_Warden_Stalker: Warden variant that spawns stalkers and makes every buffed enemy have stalker material.        
+
+    Leech Variants:
+        ED_CaveLeech_Camo: Leech variant with disabled light, hidden healthbar, 75% piercing resistance, significantly increased radius and speed and material chosen to camouflage per each biome
 
     Barrage Renames:
     Note: i have skill issue and only managed to dummy with absolute basics, but it had renaming working so here we are with bases to be used in cd2 and make down recorder mod happy
@@ -122,6 +135,32 @@ Nightmares Enemies
         ED_BarrageInfector_Fire: Renamed barrage infector. normal barrage at base, with different descriptor values from vanilla and renamed for down recorder mod
         ED_BarrageInfector_Nuke: Renamed barrage infector. normal barrage at base, with different descriptor values from vanilla and renamed for down recorder mod
         ED_BeerrageInfector: Renamed barrage infector. normal barrage at base, with different descriptor values from vanilla and renamed for down recorder mod
+
+Projectiles:
+
+    PRJ_Inferno1; PRJ_Inferno2: Modified, weaker (by single hit damage) version of scorching tide projectile with extra width and damage particle count 
+    PRJ_Spider_RapidShooter_Rocket: Modified rockets
+    PRJ_NukeBurstShot: yet another nukeball projectile
+    PRJ_ShootingPlant_Screen: Modified, 25% stronger variant of nemesis shield/screen attack, with fire/electrical damage types instead
+    PRJ_ShootingPlant_Wall; PRJ_ShootingPlant_Wall_Fire: Modified variant of lacerator stomp, applies explosive/fire dot on player after hit, has 50% extra knockback but does 6 base damage instead of 20
+    PRJ_Battleblimp: Modified rocket
+    PRJ_(Exploder/Grabber/SentinelEgg/Sharknado/Spitter/Stabber): breeder egg variants
+    PRJ_JellyNuke: :engithere:
+    PRJ_BulkonatorSpawn: Projectile that bulkonator shoots after death
+    PRJ_ExploderTankClusterBomb_(Elemental/Electric/Fire/Ice/leadburster): Projectile that elemental and leadburster bulks spawn after death
+    PRJ_ExploderTankExplosive: Projectile that explosive bulk spawns after getting hit and on death
+    PRJ_Bomber_(Exploder_DropSpawner/Exploder_Spawner/Gregomber_Spawner/Gregomber_DropSpawner): Projectiles that EEE exploder/greg spawning goobers use
+    PRJ_Lobber_(Fire/Snow): Projectiles for fire and snow septics (modified fireballs and snowballs)
+    PRJ_Spider_Shooter_Ice: Acid spitter projectile variant with ice damage type
+    PRJ_IceSprout: Modified, weaker, bosco ice rocket
+    PRJ_PlatformMaker_Fall;PRJ_PlatformMaker_Rep;PRJ_PlatformMaker_RepFall: platform projectiles with fall damage/repellant/both upgrades (untested)
+    PRJ_PlatformMaker_Goo: platform projectile that spawns fungus goo
+    PRJ_Lobber_Smoke: Spitball projectile that spawns non damaging, non combustive gas cloud on impact
+    PRJ_Lobber_SmokeCombustion: Spitball projectile that spawns non damaging, combustive gas cloud on impact
+    PRJ_Lobber_SmokeDamage: Spitball projectile that spawns damaging, non combustive gas cloud on impact
+    PRJ_Lobber_SmokeAll: Spitball projectile that spawns damaging, combustive gas cloud on impact
+    PRJ_Lobber_SmokeAllRandom: Spitball projectile that spawns one of the above gas clouds, randomly chosen
+    PRJ_ShootingPlant_MiniSpawn: Spitball projectile that spawns smoller on collision location
 
 Special thanks to:
 Modded community for: community modkit
