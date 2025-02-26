@@ -114,9 +114,8 @@ Nightmares Enemies
 
     Bulk & Exploder Variants:
         ED_Spider_ExploderTank_Elemental_E: Elemental bulk variant with preset Nightmares values.
-        ED_Spider_ExploderTank_Invis: Invisible minibulk, no clusters on death, 4m explosion radius, replaces terrain with Dystrum.
-        ED_Spider_Bulkonator: Very low HP Detonator that spawns 12-23 invisible bulks after death.
-        ED_Spider_Exploder_Immortal_E: Immortal exploder with nightmares preset
+        ED_Spider_ExploderTank_Dystrum: Dystrum minibulk, 4 cluster bombs on death, 4m explosion radius, replaces terrain with Dystrum.
+        ED_Spider_Bulkonator: Very low HP Detonator that spawns 12-23 dystrum bulks after death.
 
     Nexus Variants:
         ED_Nexus_Bulk: Nexus variant that spawns dystrm bulks.
