@@ -154,6 +154,7 @@ Projectiles:
     PRJ_IceSprout: Modified, weaker, bosco ice rocket
     PRJ_PlatformMaker_Fall;PRJ_PlatformMaker_Rep;PRJ_PlatformMaker_RepFall: platform projectiles with fall damage/repellant/both upgrades (untested)
     PRJ_PlatformMaker_Goo: platform projectile that spawns fungus goo
+    PRJ_PlatformMaker_HotRock: platform projectile that spawns hot rock
     PRJ_Lobber_Smoke: Spitball projectile that spawns non damaging, non combustive gas cloud on impact
     PRJ_Lobber_SmokeCombustion: Spitball projectile that spawns non damaging, combustive gas cloud on impact
     PRJ_Lobber_SmokeDamage: Spitball projectile that spawns damaging, non combustive gas cloud on impact
