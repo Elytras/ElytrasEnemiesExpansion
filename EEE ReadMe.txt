@@ -124,12 +124,14 @@ Nightmares Enemies
     Bulk & Exploder Variants:
         ED_Spider_ExploderTank_Elemental_E: Elemental bulk variant with preset Nightmares values.
         ED_Spider_ExploderTank_Dystrum: Dystrum minibulk, 4 cluster bombs on death, 4m explosion radius, replaces terrain with Dystrum.
+        ED_Spider_ExploderTank_Invis: Dystrum minibulk but invisible
         ED_Spider_Bulkonator: Very low HP Detonator that spawns 12-23 dystrum bulks after death.
 
     Nexus Variants:
         ED_Nexus_Bulk: Nexus variant that spawns dystrm bulks.
         ED_Nexus_Telegrabber: Nexus variant that spawns Telegrabbers.
         ED_Nexus_FireIce: Nexus variant that spawns Fire/Ice Septics.
+        ED_Nexus_Invis: Nexus variant that spawns invisible bulks.
 
     Warden Variants:
         ED_Warden_Stalker: Warden variant that spawns stalkers and makes every buffed enemy have stalker material.        
