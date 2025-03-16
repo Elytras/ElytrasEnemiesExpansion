@@ -21,29 +21,33 @@ General purpose enemies are finished, ready to be used enemies that will not be 
 
 General Purpose Enemies
 
+    Leeches:
+        ED_CaveLeech_Camo: Normal leech who has materials changing based on biome it is in.
     Mactera & Menace Enemies:
         ED_Mactera_CircleJaw: Trijaw which shoots 72 projectiles in a circle.
         ED_Spider_RapidShooter_Rocket: Rocket menace.
         ED_Spider_RapidShooter_TCF: Menace that shoots PRJ_Spider_RapidShooter_TCF (modified EPC TCF PP) shots. Uses Donnie's fanatic/shotgunmenace AI.
         ED_TurboNuke: You won’t believe...
+        ED_Spider_RapidShooter_Unstable: Teleporter menace. on hit applies "Dimensional Instability" which will teleport hit target randomly every 5 seconds
 
     Exploders & Bulk Variants:
         ED_Spider_Exploder_Radioactive: REZ exploder (because vanilla doesn't have ED).
-        ED_Spider_Exploder_Camo and ED_Spider_Exploder_Radioactive_Camo: Normal and radioactive camouflage variants of exploders slightly smaller in size and
+        ED_Spider_Exploder_Camo and ED_Spider_Exploder_Radioactive_Camo: Normal and radioactive camouflage variants of exploders
         ED_Spider_Exploder_Immortal: Immortal exploder with a 10m explosion radius.
         ED_Spider_ExploderTank_Electrical: Electrical bulk, leaves an electrical field on death which slows players by 50% and disables shields.
         ED_Spider_ExploderTank_Fire: Fire bulk, 20m radius heat explosion, leaves magma after death. On hit, spawns burning ground; projectiles spawn fire ground.
         ED_Spider_ExploderTank_Ice: Ice bulk, 20m radius cold explosion, leaves a chilling zone on death and on projectile impact.
         ED_Spider_ExploderTank_Leadburster: Leadburster bulk, on death spreads PRJ_ExploderTankClusterBomb_leadburster, spawning leadbursters. Note: All kills and damage count as friendly fire.
         ED_Spider_ExploderTank_Elemental: Elemental bulk, spawns a random elemental field on death and from PRJ_ExploderTankClusterBomb_Elemental projectiles.
-        ED_Spider_ExploderTank_Explosive: Explosive bulk, after getting hit, spawns a cluster of 20 bomblets (PRJ_ExploderTankExplosive) every 2 seconds.
+        ED_Spider_ExploderTank_Explosive: Explosive bulk, after getting hit, spawns a cluster of 20 bomblets (PRJ_ExploderTankExplosive) every 6 seconds.
         ED_Spider_ExploderTank_Goo: Goo bulk, on death explodes terrain into fungus goo.
 
-    Oppressor Variants:
+    Oppressor/Praetorian Variants:
         ED_Spider_ShieldTank_Fire: Fire oppressor, spawns flames when hit and on death (Uses Mev materials).
         ED_Spider_ShieldTank_Ice: Ice oppressor, spawns frost flames when hit and an ice field on death (Uses Mev materials).
         ED_Spider_ShieldTank_Electric: Electrical oppressor, spawns an electric/stalker circle on death (Uses Mev materials).
         ED_Spider_ShieldTank_Bouncer: Normal oppressor with increased knockback on all of its attacks (Uses Mev materials).
+        ED_Spider_Tank_Teleporter: Telepoter praetorian, who teleports and rotates hit target in 5m range. on death leaves field which applies STE_DimensionalInstability and will cause player to teleport randomly every 5 seconds (Ste has 15 seconds duration)
 
     Grabber Variants:
         ED_Grabber_Slow: Slow grabber, doesn't stop attacking/holding you when attacked, 25% less HP, 30% less speed.
@@ -61,6 +65,10 @@ General Purpose Enemies
         ED_ShootingPlant_NukeBarrage: NukeBurst variant, which after each attack, increases projectile count by 1-5.
         ED_ShootingPlant_SmolSpawner: Spitball variant that spawns smollers.
         ED_ShootingPlant_Smoller: Smoller. has 1/4 hp of normal baller
+        ED_ShootingPlant_Teleport: 
+            1. On hit swaps hit target with anyone who it previously hit or self
+            2. On miss teleports itself to a random ground location around projectile collision (in 2m radius), randomly scales itself (0.2x 2x; bounds: 0.1x; 5x) and rotates itself
+
     Lobber Variants:
         ED_Spider_Lobber_Fire: Fireball septic with modified og dread fireball (doesn't carve)
         ED_Spider_Lobber_Snow: Snowball septic with modified snowball projectile (doesn't isntafreeze players)
@@ -72,7 +80,7 @@ General Purpose Enemies
         ED_IceSprout: Ceiling sprout that shoots 3x PRJ_IceSprout (edited Bosco ice rockets). Does 0 damage but freezes players.
         ED_Bomber_Exploder_E: Exploder-spawning Foober (like DEA), with different materials, name, and changed dash attack to also spawn exploders compared to DEA’s.
         ED_GoldenLootbulk: Golden lootbug here, we’re rich.
-
+    
 Currently Not Configurable in CD2 (Expected Soon)
 
     ED_Nexus_Custom: Customizable Nexus, base descriptor for making custom Nexi.
@@ -82,6 +90,7 @@ Currently Not Configurable in CD2 (Expected Soon)
     ED_Spider_Morpher: Customizable Slasher Morpher. Default: Teleports hit player within 50m range, applies random scale between 0.5x and 2x with a cap of 0.33x and 3x.
     ED_Spider_Rotator: Customizable Slasher Rotator. Default: Randomly rotates hit player.
     ED_Spider_Scaler: Customizable Slasher Scaler. Default: Scales hit player randomly within 0.75x and 1.33x range, with a cap of 0.1x and 10x
+
     ED_Warden_Custom: Customizable Warden, base descriptor for custom Wardens.
 
 Nightmares Enemies
@@ -125,8 +134,10 @@ Nightmares Enemies
     Warden Variants:
         ED_Warden_Stalker: Warden variant that spawns stalkers and makes every buffed enemy have stalker material.        
 
-    Leech Variants:
-        ED_CaveLeech_Camo: Leech variant with disabled light, hidden healthbar, 75% piercing resistance, significantly increased radius and speed and material chosen to camouflage per each biome
+    Camouflaged Enemies:
+        ED_CamoLeech: Leech variant with disabled light, hidden healthbar, 75% piercing resistance, significantly increased radius and speed and material chosen to camouflage per each biome
+        ED_Exploder_Camo: camo exploder with 0.75x size and hidden healthbar
+        ED_Exploder_RadioCamo: same as above but radioactive
 
     Barrage Renames:
     Note: i have skill issue and only managed to dummy with absolute basics, but it had renaming working so here we are with bases to be used in cd2 and make down recorder mod happy
@@ -161,6 +172,10 @@ Projectiles:
     PRJ_Lobber_SmokeAll: Spitball projectile that spawns damaging, combustive gas cloud on impact
     PRJ_Lobber_SmokeAllRandom: Spitball projectile that spawns one of the above gas clouds, randomly chosen
     PRJ_ShootingPlant_MiniSpawn: Spitball projectile that spawns smoller on collision location
+    PRJ_Spider_RapidShooter_Unstable: Menace projectile that on hit applies Dimensional Instability.
+
+STEs:
+    Dimensional instability is just a basic ste that has damage rate of once every 5 seconds. its basically same STE as any other damaging ste, it has nothing special to it except longer wait between damage to balance out teleporters
 
 Special thanks to:
 Modded community for: community modkit
