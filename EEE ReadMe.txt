@@ -21,8 +21,16 @@ General purpose enemies are finished, ready to be used enemies that will not be 
 
 General Purpose Enemies
 
+    Wardens:
+        ED_Warden_Basic
+            Spawns 6 - 8 Enemies, SpawnCount scales with difficulty
+                60% chance for ED_Spider_Grunt,
+                20% for ED_Spider_Grunt_Attacker, 
+                20% for ED_Spider_Grunt_Guard
+
     Leeches:
         ED_CaveLeech_Camo: Normal leech who has materials changing based on biome it is in.
+
     Mactera & Menace Enemies:
         ED_Mactera_CircleJaw: Trijaw which shoots 72 projectiles in a circle.
         ED_Spider_RapidShooter_Rocket: Rocket menace.
