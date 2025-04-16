@@ -1,38 +1,18 @@
-EEE Enemy/Projectile list
+EEE Enemy/Projectile/Materials list
 
 One of the main motivations of making this mod was making Down Record count player kills on renamed enemies :engilaugh:
 MEV/DEA assets/rebuilds used with the permissions of the authors
 Some MEV materials are added with different names so that they can be used in CD2 Material control (you can ask me if you want any specific mev enemy material to be introduced)
-Some enemies were duplicated with new name so they can be distinguished by name in game and their kills count in stat tracking mods, as renaming enemies in cd2 stops it from happening.
+Some enemies were duplicated with new name so that "Down recorder" mod can correctly count kills done by enemy, because otherwise the counter breaks
 
+Anything with (Nightmares) after descriptor has nightmares mode added to it. Which for anyone can be tested if you change difficulty such that it has "Nightmares" in the difficulty name.
+    >>In "Nightmares" mode<< it will change some parts of the enemy (which may override some/all changes done to them by CD2), that i want for my difficulty but don't feel like a big enough change to introduce it into a mod as a separate enemy.
+    The only exclusion to this rule are barrages. Since we don't have season 5 modkit and barrage dummies, i can only do so much about them. So most of their changes are behind "Nightmares" mode, because they are basically a "Hardcoded CD2 enemy"
+    This was my original idea to do before CD2 b14 which improved networking and replication limit for CD2 significantly, in order to decrease file size, as of now its mostly not needed, but i still want to do and leave it that way.
+    If you are intersted in exact changes done to enemy/projectile @me
 
-Anything with "Nightmares" after descriptor has nightmares mode added to it, which will work if you start mission with difficulty that contains "Nightmares" (case insensitive) in the name. 
-In that case, some cd2 changes may not work on those enemies, because they will be overwritten by EEE. If you want some of the things to be on the base enemy, please message me (Can't do it for any of the s5 enemies though.)
-    Why am i doing it this way for barragers which otherwise are just vanilla enemy? because the way they are done is essentially a cd2 way of customizing enemies, just hardcoded on enenmy.
-    It is done like that because we dont have real barrage dummy due to no modkit updates for season 5
-    There are some things i can change to the barrage base, but not it's attack pattern/count/behavior/etc
-
-    On other enemies, that can be (and are actual real enemies without nightmares mode) i made sure so that EEE will overwrite anything CD2 does to the said enemy, if nightmares mode is enabled. 
-    I did it because i dont want to load cd2 replication system. As much as cd2 now allows for bigger difficulties, i still prefer this way. It hides enemy changes from people yes, but i dont think it matters for anyone who is not interested about difficulty or enemy changes
-    If it does matter for you though, if you are interested in exact changes per enemy, you can ask me in EEE thread on PDRG discord server. 
-    If you then will be interested into that enemy not being "locked" behind nightmares mode i can add it, but most (as of writing this message - all) of the "Nightmares mode" enemies can be done via cd2, and does not require custom enemy to do so
-
-Note: Description below will be changed/removed when time passes with updating more enemies to have "Nightmares" mode on them
-
-2 enemy categories. Nightmares specific and general use. For the dupes at some point i will remove them and add flag to enable difficulty mode on enemy at some point. (though :engishrug: to do with things that are basic changes of vanilla enemies)
-Nightmares enemies are enemies that exist specifically for my difficulty. 
-They can be:
-1. Unfinished(need cd2 modules/cd2 modules and/or mev/dea for projectiles)
-2. Unstable
-3. Too small to realistically count as full on custom enemy
-4. Premade variant of something easy to do that was added only to free up space in difficulty file, has a high chance of also being a mev enemy with a rename to allow down recorder mod to count kills from it
-5. Just something weird
-For Nightmares enemies: 
-    If you want a copy of one of them being saved in the state they are at any given point, please notify me, otherwise i may change/delete enemy from the mod for any reason. I may not notify about exact changes done to Nightmares enemies in the mod updates.
-
-General purpose enemies are finished, ready to be used enemies that will not be changed unless enough people ask to change it (in which case i'll either edit it or add edited variant of said enemy).
-
-General Purpose Enemies
+Descriptors:
+    ED_Empty - Empty descriptor
     Dwarves:
         Note: they dont do anything at all. they just stand in place, are immortal and pull agro.
         ED_DwarfDriller
@@ -59,29 +39,35 @@ General Purpose Enemies
 
     Exploders & Bulk Variants:
         ED_Spider_Exploder_Radioactive: REZ exploder (because vanilla doesn't have ED).
-        ED_Spider_Exploder_Camo and ED_Spider_Exploder_Radioactive_Camo: Normal and radioactive camouflage variants of exploders
+        ED_Spider_Exploder_Camo(Nightmares) and ED_Spider_Exploder_Radioactive_Camo(Nightmares): Normal and radioactive camouflage variants of exploders
         ED_Spider_Exploder_Immortal: Immortal exploder with a 10m explosion radius.
-        ED_Spider_ExploderTank_Multiplier: Exploder which spawns a copy of enem(y/ies) it hit
-        ED_Spider_ExploderTank_Electrical: Electrical bulk, leaves an electrical field on death which slows players by 50% and disables shields.
-        ED_Spider_ExploderTank_Fire: Fire bulk, 20m radius heat explosion, leaves magma after death. On hit, spawns burning ground; projectiles spawn fire ground.
-        ED_Spider_ExploderTank_Ice: Ice bulk, 20m radius cold explosion, leaves a chilling zone on death and on projectile impact.
-        ED_Spider_ExploderTank_Leadburster: Leadburster bulk, on death spreads PRJ_ExploderTankClusterBomb_leadburster, spawning leadbursters. Note: All kills and damage count as friendly fire.
+        ED_Spider_ExploderTank_Multiplier (Nightmares): Exploder which spawns a copy of enem(y/ies) it hit
+        ED_Spider_ExploderTank_Electrical (Nightmares): Electrical bulk, leaves an electrical field on death which slows players by 50% and disables shields.
+        ED_Spider_ExploderTank_Fire (Nightmares): Fire bulk, 20m radius heat explosion, leaves magma floor and burning ground after death. On hit, spawns burning ground; projectiles spawn burning ground.
+        ED_Spider_ExploderTank_Ice (Nightmares): Ice bulk, 20m radius cold explosion, leaves ice floor, and chilling zone on death and on projectile impact.
+        ED_Spider_ExploderTank_Leadburster (Nightmares): Leadburster bulk, on death spreads PRJ_ExploderTankClusterBomb_leadburster, spawning leadbursters. Note: All kills and damage count as friendly fire.
         ED_Spider_ExploderTank_Elemental (Nightmares): Elemental bulk, spawns a random elemental field on death and from PRJ_ExploderTankClusterBomb_Elemental projectiles.
-        ED_Spider_ExploderTank_Explosive: Explosive bulk, after getting hit, spawns a cluster of 20 bomblets (PRJ_ExploderTankExplosive) every 6 seconds.
-        ED_Spider_ExploderTank_Goo: Goo bulk, on death explodes terrain into fungus goo.
-        ED_Spider_ExploderTank_Multiplier: Bulk which spawns a copy of enemy it hits
-        ED_Spider_Exploder_Multiplier: Same as above, but its an exploder
-        ED_Spider_ExploderTank_Dystrum: Dystrum minibulk, 4 cluster bombs on death, 4m explosion radius, replaces terrain with Dystrum.
-        ED_Spider_ExploderTank_Invis: Dystrum minibulk but invisible and without carve
-        ED_Spider_Bulkonator: Very low HP Detonator that spawns 12-23 dystrum bulks after death.
-        ED_Spider_ExploderTank_Kinetic_E: Normal bulk with no meatballs on death, 20m carve, immunity to elemental damage types and big weakness to non elemental damage types
+        ED_Spider_ExploderTank_Explosive (Nightmares): Explosive bulk, after getting hit, spawns a cluster of 20 bomblets (PRJ_ExploderTankExplosive) every 6 seconds.
+        ED_Spider_ExploderTank_Goo (Nightmares): Goo bulk, on death explodes terrain into fungus goo.
+        ED_Spider_Exploder_Multiplier (Nightmares): Same as above, but its an exploder
+        ED_Spider_ExploderTank_Dystrum (Nightmares): Dystrum minibulk, 4 cluster bombs on death, 4m explosion radius, replaces terrain with Dystrum.
+        ED_Spider_ExploderTank_Invis (Nightmares): Dystrum minibulk but invisible and without carve
+        ED_Spider_Bulkonator (Nightmares): Very low HP Detonator that spawns 12-23 dystrum bulks after death.
+        ED_Spider_ExploderTank_Kinetic (Nightmares): Normal bulk with no meatballs on death, 20m carve, immunity to elemental damage types and big weakness to non elemental damage types
+        ED_Spider_ExploderTank_Repellant (Nightmares): On explosion replaces terrain with repellant platform variant in the carve radius, instead of destroying terrain
+        ED_Spider_ExploderTank_Bedrock (Nightmares): Like above but bedrock.
+        ED_Spider_ExploderTank_RandomReplace (Nightmares): Like above but random material.
+        ED_Spider_ExploderTank_RandomCarve (Nightmares): Random, but carves like normal bulk
+        ED_Spider_Exploder_Electrical (Nightmares): After death leaves electrical field
+        ED_Spider_Exploder_Fire (Nightmares): same as above but burning ground
+        ED_Spider_Exploder_Ice (Nightmares): same as above but chilling zone
 
     Oppressor/Praetorian Variants:
-        ED_Spider_ShieldTank_Fire: Fire oppressor, spawns flames when hit and on death (Uses Mev materials).
-        ED_Spider_ShieldTank_Ice: Ice oppressor, spawns frost flames when hit and an ice field on death (Uses Mev materials).
-        ED_Spider_ShieldTank_Electric: Electrical oppressor, spawns an electric/stalker circle on death (Uses Mev materials).
-        ED_Spider_ShieldTank_Bouncer: Normal oppressor with increased knockback on all of its attacks (Uses Mev materials).
-        ED_Spider_Tank_Teleporter: Telepoter praetorian, who teleports and rotates hit target in 5m range. on death leaves field which applies STE_DimensionalInstability and will cause player to teleport randomly every 5 seconds (Ste has 15 seconds duration)
+        ED_Spider_ShieldTank_Fire (Nightmares): Fire oppressor, spawns flames when hit and on death (Uses Mev materials).
+        ED_Spider_ShieldTank_Ice (Nightmares): Ice oppressor, spawns frost flames when hit and an ice field on death (Uses Mev materials).
+        ED_Spider_ShieldTank_Electric (Nightmares): Electrical oppressor, spawns an electric/stalker circle on death (Uses Mev materials).
+        ED_Spider_ShieldTank_Bouncer (Nightmares): Normal oppressor with increased knockback on all of its attacks (Uses Mev materials).
+        ED_Spider_Tank_Teleporter (Nightmares): Telepoter praetorian, who teleports and rotates hit target in 5m range. on death leaves field which applies STE_DimensionalInstability and will cause player to teleport randomly every 5 seconds (Ste has 15 seconds duration)
 
     Grabber Variants:
         ED_Grabber_Slow: Slow grabber, doesn't stop attacking/holding you when attacked, 25% less HP, 30% less speed.
@@ -109,12 +95,13 @@ General Purpose Enemies
         ED_Spider_Lobber_Smoke: Gas septic, has different projectile variants that spawn different variation of praetorian gas. Default: PRJ_Lobber_SmokeDamage
 
     Miscellaneous Special Enemies:
-        ED_BattleBlimp: Breeder that shoots PRJ_Battleblimp (modified bot rockets).
         ED_BigShredder: Big shredder with 5x health and -176 freezing temperature. Note: "DieIfFrozen: false" doesn't work on shredders; set their freezing temperature to -99999 to make them unfreezable.
         ED_IceSprout: Ceiling sprout that shoots 3x PRJ_IceSprout (edited Bosco ice rockets). Does 0 damage but freezes players.
         ED_Bomber_Exploder_E: Exploder-spawning Foober (like DEA), with different materials, name, and changed dash attack to also spawn exploders compared to DEA’s.
         ED_GoldenLootbulk: Golden lootbug here, we’re rich.
-    
+        ED_Spider_Slasher_Dasher: Applies x11 speed for 0.75 seconds after hit
+        ED_Bees: Bees
+
     Greg Variants & Unique Nightmares:
         ED_Greg: Giant high HP/damage/resistance Swarmer.
         ED_GregJunior: Greg, but junior.
@@ -136,13 +123,14 @@ General Purpose Enemies
         ED_SpitterBreeder: Spitter breeder, spawns normal spitters.
         ED_ShredderBreeder: Shredder breeder, spawns ED_BigShredder
         ED_JellyNuker: boom
+        ED_BattleBlimp (Nightmares): Breeder that shoots PRJ_Battleblimp (modified bot rockets).
 
     Barrages:
     Note: by default they are only renames
         ED_BarrageInfector_Exploder (Nightmares) : Normal renamed barrage at base. In nightmares mode has edited material and shoots with PRJ_Bomber_Exploder_Spawner 
         ED_BarrageInfector_Fire (Nightmares) : Normal renamed barrage at base. In nightmares mode has edited materials and shoots with PRJ_Spider_Boss_Twin_Mine
         ED_BarrageInfector_Nuke (Nightmares) : Normal renamed barrage at base. In nightmares mode has edited materials, shoots with PRJ_JellyNuke and has 0.5 time dilation
-        ED_BeerrageInfector: Renamed barrage infector. normal barrage at base, with different descriptor values from vanilla and renamed for down recorder mod
+        ED_BeerrageInfector (Nightmares): Renamed barrage infector. normal barrage at base, with different descriptor values from vanilla and renamed for down recorder mod
 
 
     Nexus Variants:
@@ -166,19 +154,12 @@ Currently Not Configurable in CD2 (Expected Soon)
     ED_Spider_Morpher: Customizable Slasher Morpher. Default: Teleports hit player within 50m range, applies random scale between 0.5x and 2x with a cap of 0.33x and 3x.
     ED_Spider_Rotator: Customizable Slasher Rotator. Default: Randomly rotates hit player.
     ED_Spider_Scaler: Customizable Slasher Scaler. Default: Scales hit player randomly within 0.75x and 1.33x range, with a cap of 0.1x and 10x
-    ED_Spider_ExploderTank_Teleport: Customizable Bulk Teleporter. On hit swaps rotation and location of everyone who it hit, with someone else who it didnt hit. Applies DimensionalInstability on hit too.
+    ED_Spider_ExploderTank_Teleport: Customizable Bulk Teleporter. On hit swaps rotation and location of everyone who it hit, with someone else who it didnt hit. If hit by death explosion, will apply dimensional instability
+    ED_Spider_Slasher_DasherEX: On hit teleports hit target as much forward as it possibly can
+    ED_Spider_Spitter_Dasher: Same as above but webspitter
     ED_Warden_Custom: Customizable Warden, base descriptor for custom Wardens.
-
-Nightmares Enemies
-    Oppressor Variants:
-        ED_God_Oppressor: Fire oppressor variant with preset Nightmares values.
-        ED_Mini_Oppressor: Ice oppressor variant with preset Nightmares values.
-        ED_Stalker_Oppressor: Electric oppressor variant with added stalker debuff attack and preset Nightmares values.
-
-    Camouflaged Enemies:
-        ED_CamoLeech: Leech variant with disabled light, hidden healthbar, 75% piercing resistance, significantly increased radius and speed and material chosen to camouflage per each biome
-        ED_Exploder_Camo: camo exploder with 0.75x size and hidden healthbar
-        ED_Exploder_RadioCamo: same as above but radioactive
+    ED_Spider_Pitter: Digs a pit under hit target
+    ED_CaveLeech_Friendly: Teleports single random player in 10m radius around grabbed player, every time grabbed player takes damage
 
 Projectiles:
 
@@ -213,8 +194,116 @@ Projectiles:
     PRJ_Bomber_Exploder_Spawner: Same as above but 6x
     PRJ_NukeShot: Projectile used by ED_TurboNuke
     PRJ_Spider_RapidShooter_TCF: Modified charged epc projectile, that can be popped like tcf, and does less damage
+    PRJ_SpawnerRandom: spawns one random enemy
+    PRJ_RandonatorSpawn: Same as above, but bulk meatball, with damage.
+
 STEs:
+
     Dimensional instability is just a basic ste that has damage rate of once every 5 seconds. its basically same STE as any other damaging ste, it has nothing special to it except longer wait between damage to balance out teleporters
+
+Materials:
+
+M_BedrockArmor
+M_BedrockWP
+M_Brundlemat
+M_BulkElemental
+M_BulkElemental_electric
+M_BulkElemental_fire
+M_BulkElemental_Ice
+M_Bulkonator_Body
+M_DisconatorArmor
+M_DisconatorBody
+M_DystrumBulk
+M_ElecBulkArmor
+M_ElecBulk_body
+M_ElectricField
+M_ElemBulkBody
+M_FireBulkArmor
+M_FireBulk_body
+M_Flier_HeavyVeteran01_CST
+M_GooArmor
+M_GooBulkBody
+M_GooBulk_WP
+M_GooWP
+M_IceBulkArmor
+M_IceBulk_body
+M_IceWP
+M_LeadBulker_Armor
+M_Leadbulker_Body
+M_NukeballBody
+M_Nukeballwp25
+M_Nukeballwp50
+M_NukeMinigunWP
+M_PitterArmor
+M_PitterBody
+M_Platforms_RepelNoPlat
+M_RepelArmor
+M_RepelWP
+M_smokefire
+M_SpiderShooter_Projectile_Ice1
+M_Spider_Bulkonator_Weakpoint_
+M_Spider_ExploderTank_Armor_Kinetic
+M_Spider_ExploderTank_Body_Kinetic
+M_Spider_Grunt_Armor_SlasherClaws_Dasher
+M_Spider_Grunt_Armor_Slasher_Dasher
+M_Spider_Grunt_Body_Dasher
+M_Spider_Lobber_ArmorShell_Fire
+M_Spider_Lobber_ArmorShell_Snow
+M_Spider_Lobber_Body_Fire
+M_Spider_Lobber_Body_Snow
+M_Spider_Lobber_GlowBubbles_Fire
+M_Spider_Lobber_GlowBubbles_Snow
+M_Spider_Lobber_GlowButt_Fire
+M_Spider_Lobber_GlowButt_Smoke
+M_Spider_Lobber_GlowButt_Snow
+M_Spider_Lobber_Projectile_Wobble_Fire
+M_Spider_Lobber_Projectile_Wobble_Snow
+M_Spider_Lobber_Teeth_Fire
+M_Spider_Lobber_Teeth_Snow
+M_Spider_Oppressor_Tank_Body_dummy
+M_Spider_Oppressor_Tank_Body_fire
+M_SpitwallerBody
+M_SpitwallerWP
+M_Telebulkarmor
+M_Telebulkbody
+M_TeleporterA
+M_TeleporterA2
+M_TeleporterA3
+M_TeleporterA4
+M_TeleporterBase
+M_TeleporterBase2
+M_TeleporterBase3
+M_TeleporterBase4
+M_TeleporterL
+M_TeleporterL2
+M_TeleporterL3
+M_TeleporterL4
+M_TeleporterLR
+M_TeleporterLR2
+M_TeleporterLR3
+M_TeleporterLR4
+M_TeleporterLS
+M_TeleporterLS2
+M_TeleporterLS3
+M_TeleporterLS4
+M_TeleporterR
+M_TeleporterR2
+M_TeleporterR3
+M_TeleporterR4
+M_TeleporterRS
+M_TeleporterRS2
+M_TeleporterRS3
+M_TeleporterRS4
+M_TeleporterS
+M_TeleporterS2
+M_TeleporterS3
+M_TeleporterS4
+M_TurboNukeArmor
+M_TurboNukeBody
+M_TurboNukeWP
+M_VolatileArmor
+M_VolatileWP
+
 
 Special thanks to:
 Modded community for: community modkit
